@@ -11,23 +11,32 @@ import { Revenue_Mock_Data } from "../features/dashboard/data/revenue";
 
 export default function Dashboard() {
   return (
-    <div className="max-w-7xl">
+    <div className="w-full max-w-7xl">
       <h2>Dashboard</h2>
-      <div className="flex flex-col lg:gap-10">
-        <div className="flex flex-col md:flex-row md:space-x-2 lg:space-x-5">
-          <RevenueBarChat data={Revenue_Mock_Data} />
-          <OrderTimePieChart data={Order_Time_Mock_Data} />
+
+      {/* the container for the dashboard content  */}
+      <div className="overflow-hidden">
+        {/* 2: 1 display for revenue chart vs order time pie chart  */}
+        <div className="grid grid-cols-1 lg:grid-cols-3  border-b border-[#C8CBD9]">
+          <div className="lg:col-span-2 p-6 lg:border-b-0 lg:border-r border-[#C8CBD9]">
+            <RevenueBarChat data={Revenue_Mock_Data} />
+          </div>
+          <div className="p-6">
+            <OrderTimePieChart data={Order_Time_Mock_Data} />
+          </div>
         </div>
-        <div className="flex flex-col md:flex-row lg:gap-5 w-full">
-          <div className="w-full">
+
+        {/* 2nd row containing rating bubbles, most ordered food , and oder trend */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          <div className="p-6 border-b md:border-b-0 md:border-r border-[#C8CBD9]">
             <RatingBubbles data={Rating_MockData} />
           </div>
 
-          <div className="w-full">
+          <div className="p-6 border-b md:border-b-0 lg:border-r border-[#C8CBD9]">
             <MostOrderedSection />
           </div>
 
-          <div className="w-full">
+          <div className="p-6">
             <OrderLineChart data={Order_Trends_Mock_Data} />
           </div>
         </div>

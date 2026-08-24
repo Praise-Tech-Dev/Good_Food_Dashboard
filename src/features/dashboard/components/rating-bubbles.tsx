@@ -6,17 +6,17 @@ interface RatingBubblesProps {
 
 const LayoutSlots = [
   {
-    position: "top-2 left-6 z-20",
+    position: "top-[6%] left-[8%] z-20",
     size: 107,
     ring: "border-2 border-l-transparent rotate-45",
   },
   {
-    position: "top-6 right-10 z-10",
+    position: "top-[15%] right-[2%] z-10",
     size: 168,
     ring: "border-2 border-l-transparent rotate-45",
   },
   {
-    position: "-bottom-2 -left-4 z-10",
+    position: "bottom-[4%] left-[4%] z-10",
     size: 122,
     ring: "border-2 border-t-transparent rotate-12",
   },
@@ -37,13 +37,15 @@ export const RatingBubbles = ({data} : RatingBubblesProps) => {
           Lorem ipsum dolor sit amet, consectetur
         </p>
       </div>
-      <div className="relative w-full h-60 max-w-[320px] mx-auto">
+
+      <div className="relative w-full h-60 max-w-[320px] mx-auto shrink-0">
         {data.map((item, index) => {
           // calculate the size of the rating bubble based on the percentage
           // const diameter = 75 + (item.percentage / 100) * 40;
 
           const slot = LayoutSlots[index % LayoutSlots.length];
 
+          
           return (
             <div
               key={item.id || index}

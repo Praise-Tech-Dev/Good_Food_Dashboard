@@ -14,13 +14,19 @@ interface RevenueBarChartProps {
 }
 export const RevenueBarChat = ({ data }: RevenueBarChartProps) => {
   return (
-    <div className="w-full my-10">
-      <div className="">
-        <h2 className="text-[14px] font-normal leading-5.5">Revenue</h2>
-        <p className="text-[20px] font-medium leading-7">IDR 7.852.000</p>
-        <p className="text-[13px] font-normal leading-5.25 tracking-[0.5px]">
-          Sales from 1-12 Dec, 2020
-        </p>
+    <div className="w-full flex flex-col justify-between h-full">
+      <div className="flex items-start justify-between">
+        <div>
+          <h2 className="text-[14px] font-normal leading-5.5">Revenue</h2>
+          <p className="text-[20px] font-medium leading-7">IDR 7.852.000</p>
+          <p className="text-[13px] font-normal leading-5.25 tracking-[0.5px]">
+            Sales from 1-12 Dec, 2020
+          </p>
+        </div>
+
+        <button className="text-xs font-medium text-[#5A6ACF] bg-[#FBFCFE] border-[#DDE4F0] rounded-[5px] hover:bg-[#FBFCFE]/10 px-3 py-1.5 transition-colors">
+          View Report
+        </button>
       </div>
 
       <div className="w-full max-w-169.5 min-h-30 h-35.25 ">
@@ -28,7 +34,7 @@ export const RevenueBarChat = ({ data }: RevenueBarChartProps) => {
           <BarChart
             data={data}
             barGap={6}
-            // margin={{ top: 10, right: 10, left: 0, bottom: 0 }}
+            margin={{ top: 10, right: 10, left: 0, bottom: 0 }}
           >
             <CartesianGrid
               vertical={false}

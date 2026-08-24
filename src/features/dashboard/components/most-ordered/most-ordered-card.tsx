@@ -6,23 +6,23 @@ interface MostOrderedCardProps  {
 
 export const MostOrderedCard = ({data}: MostOrderedCardProps) => {
     return (
-      <div className="flex flex-col gap-4 w-full max-w-70 divide-y divide-slate-100">
+      <div className="flex flex-col w-full divide-y divide-slate-100">
         {data.map((item, index) => (
-          <div className="flex lg:gap-4 justify-between py-2">
-            <div
-              className="flex md:gap-2 lg:gap-4 text-[#273240] text-[12px] leading-5"
-              key={index || item.id}
-            >
-              <div className="rounded-full w-7 overflow-hidden border border-slate-400 shadow-sm">
+          <div
+            key={index || item.id}
+            className="flex items-center justify-between py-2.5 first:pt-0 last:pb-0 gap-2"
+          >
+            <div className="flex md:gap-2 lg:gap-4 text-[#273240] text-[12px] leading-5">
+              <div className="rounded-full h-7 w-7 overflow-hidden border border-slate-400 shadow-sm shrink-0">
                 <img
                   src={item.image}
                   alt={item.image}
                   className="object-cover w-full h-full"
                 />
               </div>
-              <div className="">{item.name}</div>
+              <div className="truncate">{item.name}</div>
             </div>
-            <div className="text-[#273240] text-[12px] leading-5">
+            <div className="text-[#273240] text-[12px] leading-5 shrink-0">
               IDR {item.price.toLocaleString("id-ID")}{" "}
             </div>
           </div>

@@ -7,12 +7,18 @@ interface OrderTimeChartProps {
 }
 export const OrderTimePieChart = ({data}: OrderTimeChartProps) => {
     return (
-      <div className="space-y-6 my-10">
-        <div className="">
-          <h2 className="text-[14px] font-normal leading-5.5">Order Time</h2>
-          <p className="text-[13px] font-normal leading-5.25 tracking-[0.5px]">
-            From 1 -6 Dec, 2020
-          </p>
+      <div className="space-y-6">
+        <div className="flex items-start justify-between">
+          <div className="">
+            <h2 className="text-[14px] font-normal leading-5.5">Order Time</h2>
+            <p className="text-[13px] font-normal leading-5.25 tracking-[0.5px]">
+              From 1 -6 Dec, 2020
+            </p>
+          </div>
+
+          <button className="text-xs font-medium text-[#5A6ACF] bg-[#FBFCFE] border-[#DDE4F0] rounded-[5px] hover:bg-[#FBFCFE]/10 px-3 py-1.5 transition-colors">
+            View Report
+          </button>
         </div>
 
         <div className="w-full  flex flex-col items-center">
@@ -41,7 +47,7 @@ export const OrderTimePieChart = ({data}: OrderTimeChartProps) => {
 
           {/* legend  */}
 
-          <div className="flex items-center gap-6 lg:gap-10 mt-3 text-xs">
+          <div className="flex items-center gap-6 lg:gap-4 mt-3 text-xs">
             {data.map((item) => (
               <div className="" key={item.timeOfTheDay}>
                 <div className="flex items-center gap-1">
