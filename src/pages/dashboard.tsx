@@ -27,12 +27,12 @@ export default function Dashboard() {
         </div>
 
         {/* 2nd row containing rating bubbles, most ordered food , and oder trend */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          <div className="p-6 border-b md:border-b-0 md:border-r border-[#C8CBD9]">
+        <div className="grid grid-cols-1 lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-[#C8CBD9]">
+          <div className="p-6">
             <RatingBubbles data={Rating_MockData} />
           </div>
 
-          <div className="p-6 border-b md:border-b-0 lg:border-r border-[#C8CBD9]">
+          <div className="p-6">
             <MostOrderedSection />
           </div>
 

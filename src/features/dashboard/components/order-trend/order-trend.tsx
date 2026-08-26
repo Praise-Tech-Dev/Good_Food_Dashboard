@@ -1,5 +1,6 @@
 import { CartesianGrid, Line, LineChart, ResponsiveContainer, Tooltip, XAxis } from "recharts";
 import type { OrderTrendData } from "../../types/order-trend.types"
+import { TrendBadge } from "../../../../shared/components/trend-badge";
 
 interface OrderLineChartProps {
     data: OrderTrendData[];
@@ -8,12 +9,19 @@ interface OrderLineChartProps {
 export const OrderLineChart = ({data}: OrderLineChartProps) => {
     return (
       <div className="w-full">
-        <div className="">
-          <h2 className="text-[14px] font-normal leading-5.5">Order</h2>
-          <p className="text-[20px] font-medium leading-7">IDR 2.568</p>
-          <p className="text-[13px] font-normal leading-5.25 tracking-[0.5px]">
-            Sales from 1-6 Dec, 2020
-          </p>
+        <div className="flex items-start justify-between">
+          <div className="">
+            <h2 className="text-[14px] font-normal leading-5.5">Order</h2>
+            <p className="text-[20px] font-medium leading-7">IDR 2.568</p>
+            <TrendBadge value={-2.1} />
+            <p className="text-[13px] font-normal leading-5.25 tracking-[0.5px]">
+              Sales from 1-6 Dec, 2020
+            </p>
+          </div>
+
+          <button className="text-xs font-medium text-[#5A6ACF] bg-[#FBFCFE] border-[#DDE4F0] rounded-[5px] hover:bg-[#FBFCFE]/10 px-3 py-1.5 transition-colors shadow-sm shadow-[#4048520D]">
+            View Report
+          </button>
         </div>
         <div className="w-full h-35.25">
           <ResponsiveContainer width="100%" height="100%">

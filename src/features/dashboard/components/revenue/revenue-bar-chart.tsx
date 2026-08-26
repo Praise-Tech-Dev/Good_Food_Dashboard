@@ -8,6 +8,7 @@ import {
 } from "recharts";
 import { RevenueCustomToolTip } from "./revenue-custom-tooltip";
 import type { RevenueData } from "../../types/revenue.types";
+import { TrendBadge } from "../../../../shared/components/trend-badge";
 
 interface RevenueBarChartProps {
   data: RevenueData[];
@@ -19,12 +20,13 @@ export const RevenueBarChat = ({ data }: RevenueBarChartProps) => {
         <div>
           <h2 className="text-[14px] font-normal leading-5.5">Revenue</h2>
           <p className="text-[20px] font-medium leading-7">IDR 7.852.000</p>
+          <TrendBadge value={2.1} />
           <p className="text-[13px] font-normal leading-5.25 tracking-[0.5px]">
             Sales from 1-12 Dec, 2020
           </p>
         </div>
 
-        <button className="text-xs font-medium text-[#5A6ACF] bg-[#FBFCFE] border-[#DDE4F0] rounded-[5px] hover:bg-[#FBFCFE]/10 px-3 py-1.5 transition-colors">
+        <button className="text-xs font-medium text-[#5A6ACF] bg-[#FBFCFE] border-[#DDE4F0] rounded-[5px] hover:bg-[#FBFCFE]/10 px-3 py-1.5 transition-colors shadow-sm shadow-[#4048520D]">
           View Report
         </button>
       </div>
@@ -66,18 +68,17 @@ export const RevenueBarChat = ({ data }: RevenueBarChartProps) => {
             />
           </BarChart>
         </ResponsiveContainer>
-
-        {/* legend  */}
-        <div className="flex items-center gap-6 mt-3 text-xs text-[#121212]">
-          <span className="flex items-center gap-2">
-            <span className="h-2.5 w-2.5 rounded-full bg-[#5A6ACF]" />
-            Last 6 days
-          </span>
-          <span className="flex items-center gap-2">
-            <span className="h-2.5 w-2.5 rounded-full bg-[#D8D9DB]" />
-            Last Week
-          </span>
-        </div>
+      </div>
+      {/* legend  */}
+      <div className="flex items-center gap-6 mt-3 text-xs text-[#121212]">
+        <span className="flex items-center gap-2">
+          <span className="h-2.5 w-2.5 rounded-full bg-[#5A6ACF]" />
+          Last 6 days
+        </span>
+        <span className="flex items-center gap-2">
+          <span className="h-2.5 w-2.5 rounded-full bg-[#D8D9DB]" />
+          Last Week
+        </span>
       </div>
     </div>
   );
