@@ -1,20 +1,21 @@
-import {
-  LayoutDashboard,
-  ShoppingCart,
-  FileText,
-  MessageCircle,
-  Settings,
-  Wallet,
-  User,
-  CircleHelp,
-} from "lucide-react";
+
+import Chart from '../assets/icons/Chart.svg'
+import Settings from '../assets/icons/Setting.svg'
+import ShoppingCart from '../assets/icons/Buy.svg'
+import FileText  from '../assets/icons/Document.svg'
+import Review from '../assets/icons/Chat.svg'
+import Wallet from '../assets/icons/Buy.svg'
+import User from '../assets/icons/Profile.svg'
+import Help from '../assets/icons/Info Square.svg'
+
+
 
 export const navigation = {
-  main: [
+  menu: [
     {
       name: "Dashboard",
       path: "/",
-      icon: LayoutDashboard,
+      icon: Chart,
     },
     {
       name: "Food Order",
@@ -29,7 +30,7 @@ export const navigation = {
     {
       name: "Customer Review",
       path: "/reviews",
-      icon: MessageCircle,
+      icon: Review,
     },
   ],
 
@@ -52,7 +53,7 @@ export const navigation = {
     {
       name: "Help",
       path: "/help",
-      icon: CircleHelp,
+      icon: Help,
     },
   ],
 } as const;

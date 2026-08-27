@@ -17,11 +17,16 @@ export const RevenueBarChat = ({ data }: RevenueBarChartProps) => {
   return (
     <div className="w-full flex flex-col justify-between h-full">
       <div className="flex items-start justify-between">
-        <div>
-          <h2 className="text-[14px] font-normal leading-5.5">Revenue</h2>
-          <p className="text-[20px] font-medium leading-7">IDR 7.852.000</p>
-          <TrendBadge value={2.1} />
-          <p className="text-[13px] font-normal leading-5.25 tracking-[0.5px]">
+        <div className="space-y-4">
+          <div className="flex flex-col gap-2">
+            <h2 className="text-sm font-normal leading-5.5 tracking-[0.5px] ">
+              Revenue
+            </h2>
+            <p className="text-xl font-medium leading-7 tracking-[0.5px]">IDR 7.852.000</p>
+            <TrendBadge value={2.1} />
+          </div>
+
+          <p className="text-[13px] font-normal leading-5.25 tracking-[0.5px] text-black/50">
             Sales from 1-12 Dec, 2020
           </p>
         </div>
@@ -31,7 +36,7 @@ export const RevenueBarChat = ({ data }: RevenueBarChartProps) => {
         </button>
       </div>
 
-      <div className="w-full max-w-169.5 min-h-30 h-35.25 ">
+      <div className="w-full  min-h-30 h-35.25 ">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
             data={data}

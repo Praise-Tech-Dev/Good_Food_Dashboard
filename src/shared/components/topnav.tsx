@@ -32,7 +32,7 @@ export default function TopNav({user_data, hasUnreadNotification}: TopNavProps) 
   }, []);
   
   return (
-    <header className="flex justify-end items-center max-w-7xl border-b-[0.5px] border-[#C8CBD9] p-4">
+    <header className="flex justify-end items-center border-b-[0.5px] border-[#C8CBD9] p-4">
       {/* account info and notification icon */}
       <div className="flex items-center gap-4">
         <div className="relative" ref={menuRef}>

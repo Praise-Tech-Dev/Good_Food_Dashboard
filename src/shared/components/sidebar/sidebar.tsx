@@ -12,7 +12,7 @@ export default function Sidebar() {
     closeSidebar();
   }, [location.pathname]);
   return (
-    <div>
+    <div className="">
       <aside
         className={`
         fixed
@@ -38,8 +38,8 @@ export default function Sidebar() {
             isOpen ? "px-4" : "px-2"
           }`}
         >
-          <div className="flex items-center gap-3 px-2 border-b border-[#C8CBD9] py-6">
-            <div className="flex justify-center items-center rounded-full bg-[#5A67BA] w-6 h-6 text-[11px]">
+          <div className="flex items-center gap-3 px-2 border-b border-[#C8CBD9] py-4 md:py-5">
+            <div className="flex justify-center items-center rounded-full bg-[#5A67BA] w-6 h-6 text-[11px] font-bold">
               G
             </div>
 
@@ -50,6 +50,8 @@ export default function Sidebar() {
               text-[11px]
               font-bold
               uppercase
+              tracking-[0.5px]
+              leading-2.75
               text-[#5A67BA]
               ${isOpen ? "opacity-100" : "w-0 opacity-0"}
 
@@ -60,21 +62,21 @@ export default function Sidebar() {
             </div>
 
             {isOpen && (
-              <button onClick={closeSidebar} className="ml-auto md:hidden">
+              <button onClick={closeSidebar} className="ml-auto md:hidden text-slate-900">
                 <X size={22} />
               </button>
             )}
           </div>
 
-          <div className="flex flex-col pt-24 gap-10">
+          <div className="flex flex-col pt-10 gap-10">
             {/* Main navigation */}
             <nav className="flex-1 space-y-2 px-2  md:px-4">
               <div
-                className={`uppercase text-[#082431] font-normal ${!isOpen ? "hidden" : "block"}`}
+                className={`md:block uppercase text-[#082431]/50 font-normal ${!isOpen ? "hidden" : "block"}`}
               >
                 menu
               </div>
-              {navigation.main.map((item) => (
+              {navigation.menu.map((item) => (
                 <SidebarNavItem
                   key={item.name}
                   {...item}
@@ -88,7 +90,7 @@ export default function Sidebar() {
             {/* other navigation */}
             <div className="space-y-2 px-2 md:px-4">
               <div
-                className={`uppercase text-[#082431] font-normal ${!isOpen ? "hidden" : "block"}`}
+                className={` md:block uppercase text-[#082431]/50 font-normal ${!isOpen ? "hidden" : "block"}`} 
               >
                 others
               </div>

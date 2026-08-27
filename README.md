@@ -21,7 +21,7 @@ https://www.figma.com/design/qtdDY0Gq9FWTDwnB2b8PaT/Dashboard--Community-?node-i
 - **Styling:** [Tailwind CSS](https://tailwindcss.com/)
 - **Data Visualization:** [Recharts](https://recharts.org/)
 - **Routing:** [React Router v6](https://reactrouter.com/)
-- **Icons:** [Lucide React](https://lucide.dev/)
+- **Icons:** [Icons from the figma file]
 
 ---
 

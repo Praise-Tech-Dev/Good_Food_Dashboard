@@ -1,7 +1,7 @@
-import type { RatingData } from "../types/rating-types"
+import type { RatingData } from "../types/rating-types";
 
 interface RatingBubblesProps {
-    data: RatingData[];
+  data: RatingData[];
 }
 
 const LayoutSlots = [
@@ -22,18 +22,18 @@ const LayoutSlots = [
   },
 ];
 
-export const RatingBubbles = ({data} : RatingBubblesProps) => {
-    // if there is no rating yet
-    if (!data || data.length === 0) {
-        return <p className="text-xs text-slate-400"></p>
-    }
+export const RatingBubbles = ({ data }: RatingBubblesProps) => {
+  // if there is no rating yet
+  if (!data || data.length === 0) {
+    return <p className="text-xs text-slate-400"></p>;
+  }
 
   return (
-    <div className="w-full max-w-[320px] space-y-6">
+    <div className="w-full  space-y-6">
       {/* title and subtitle  */}
-      <div className="">
-        <h2 className="text-[14px] font-normal leading-5.5">Your Rating</h2>
-        <p className="text-[12px] font-normal leading-5.25 tracking-[0.5px]">
+      <div className="space-y-2">
+        <h2 className="text-sm font-normal leading-5.5">Your Rating</h2>
+        <p className="text-[12px] font-normal leading-5.5 tracking-[0.5px] text-black/50">
           Lorem ipsum dolor sit amet, consectetur
         </p>
       </div>
@@ -45,7 +45,6 @@ export const RatingBubbles = ({data} : RatingBubblesProps) => {
 
           const slot = LayoutSlots[index % LayoutSlots.length];
 
-          
           return (
             <div
               key={item.id || index}
@@ -89,4 +88,4 @@ export const RatingBubbles = ({data} : RatingBubblesProps) => {
       </div>
     </div>
   );
-}
+};

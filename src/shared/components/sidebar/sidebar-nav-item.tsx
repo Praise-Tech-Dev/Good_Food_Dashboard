@@ -1,10 +1,10 @@
 import { NavLink } from "react-router-dom";
-import type { LucideIcon } from "lucide-react";
+// import type { LucideIcon } from "lucide-react";
 
 type SidebarNavItemProps = {
   name: string;
   path: string;
-  icon: LucideIcon;
+  icon: string;
   isOpen: boolean;
   closeSidebar: () => void;
   toggleSidebar: () => void;
@@ -13,7 +13,7 @@ type SidebarNavItemProps = {
 export default function SidebarNavItem({
   name,
   path,
-  icon: Icon,
+  icon,
   isOpen,
   closeSidebar,
   toggleSidebar,
@@ -42,25 +42,27 @@ export default function SidebarNavItem({
         items-center
         gap-3
         rounded-lg
-        py-3
-        px-3
+        py-2
+        md:py-3
+        px-1
+        md:px-5
         transition-all
         duration-300
         md:justify-start
         
-        ${isOpen ? "px-4" : "justify-center"}
+        ${isOpen ? "px-5" : ""}
 
         ${
           !isImplemented
             ? "text-[#A0AEC0] cursor-not-allowed opacity-60"
-          :isActive
-            ? "bg-[#707FDD]/10 text-[#5A6ACF]"
-            : "text-[#273240] hover:bg-[#707FDD]/7"
+            : isActive
+              ? "bg-[#707FDD]/10 text-[#5A6ACF]"
+              : "text-[#273240] hover:bg-[#707FDD]/7"
         }
         `
       }
     >
-      <Icon size={20} className="shrink-0" />
+      <img src={icon} alt={`${name} icon`} className="w-5 h-5 shrink-0" />
 
       <span
         className={`
