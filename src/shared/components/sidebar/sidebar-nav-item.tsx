@@ -75,6 +75,10 @@ export default function SidebarNavItem({
           ${!isImplemented ? "text-[#A0AEC0]" : ""}
           md:w-auto
           md:opacity-100
+          text-xs 
+          font-medium
+          leading-3
+          tracking-[0.5px]
         `}
       >
         {name}

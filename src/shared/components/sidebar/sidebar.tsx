@@ -34,11 +34,9 @@ export default function Sidebar() {
       `}
       >
         <div
-          className={`transition-all duration-300 ${
-            isOpen ? "px-4" : "px-2"
-          }`}
+          className={`transition-all duration-300 ${isOpen ? "px-4" : "px-2"}`}
         >
-          <div className="flex items-center gap-3 px-2 border-b border-[#C8CBD9] py-4 md:py-5">
+          <div className="flex items-center gap-3 px-2 border-b border-[#C8CBD9] py-5">
             <div className="flex justify-center items-center rounded-full bg-[#5A67BA] w-6 h-6 text-[11px] font-bold">
               G
             </div>
@@ -62,7 +60,10 @@ export default function Sidebar() {
             </div>
 
             {isOpen && (
-              <button onClick={closeSidebar} className="ml-auto md:hidden text-slate-900">
+              <button
+                onClick={closeSidebar}
+                className="ml-auto md:hidden text-slate-900"
+              >
                 <X size={22} />
               </button>
             )}
@@ -72,7 +73,7 @@ export default function Sidebar() {
             {/* Main navigation */}
             <nav className="flex-1 space-y-2 px-2  md:px-4">
               <div
-                className={`md:block uppercase text-[#082431]/50 font-normal ${!isOpen ? "hidden" : "block"}`}
+                className={`md:block uppercase text-[#082431]/50 text-[11px] tracking-[1px] leading-2.75 font-normal ${!isOpen ? "hidden" : "block"}`}
               >
                 menu
               </div>
@@ -90,7 +91,7 @@ export default function Sidebar() {
             {/* other navigation */}
             <div className="space-y-2 px-2 md:px-4">
               <div
-                className={` md:block uppercase text-[#082431]/50 font-normal ${!isOpen ? "hidden" : "block"}`} 
+                className={` md:block uppercase text-[#082431]/50 text-[11px] tracking-[1px] leading-2.75 font-normal ${!isOpen ? "hidden" : "block"}`}
               >
                 others
               </div>

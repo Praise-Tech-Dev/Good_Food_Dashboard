@@ -28,7 +28,7 @@ export default function Dashboard() {
 
         {/* 2nd row containing rating bubbles, most ordered food , and oder trend */}
         <div className="grid grid-cols-1 lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-[#C8CBD9]">
-          <div className="py-6 ">
+          <div className="py-6 lg:pr-5">
             <RatingBubbles data={Rating_MockData} />
           </div>
 
